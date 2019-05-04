@@ -1,0 +1,12 @@
+applications:
+- buildpack: python_buildpack
+  command: gunicorn --env DJANGO_SETTINGS_MODULE=NuevaVidaAF.settings.production NuevaVidaAF.wsgi
+    -b 0.0.0.0:$PORT
+  domain: null
+  host: null
+  instances: 1
+  memory: 512M
+  name: NuevaVidaAF
+  routes:
+  - route: nuevavidaf.us-south.cf.appdomain.cloud
+  timeout: 180
